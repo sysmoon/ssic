@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>
+        <h1><a href="">App Cognition Page</a> </h1>
+    </div>
+
+    {% for app in apps %}
+        <div>
+            <h1> {{ app.appName }}</h1>
+            <p> {{ app.summary }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
