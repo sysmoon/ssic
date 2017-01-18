@@ -4,7 +4,8 @@ from django.utils import timezone
 # Create your models here.
 
 class App(models.Model):
-    listIdx = models.IntegerField()
+    author = models.ForeignKey('auth.User')
+    listIdx = models.AutoField(primary_key=True)
     category = models.CharField(max_length=50)
     appName = models.CharField(max_length=30, null=False)
     sppServerity = models.CharField(max_length=10)

@@ -3,11 +3,9 @@
 {% block content %}
     {% for app in apps %}
         <div class="post">
-            <div class="date">
-                {{ app.pubDate }}
-            </div>
+            <p class="date">created: {{ app.regDate|date:'d-m-Y' }}</p>
             <h1><a href="{% url 'app_detail' pk=app.pk %}">{{ app.appName }}</a></h1>
-            <p>{{ app.summary|linebreaksbr }}</p>
+            <p>{{ app.summary|truncatechars:200 }}</p>
         </div>
     {% endfor %}
-{% endblock content %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'apprecog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if app.pubDate %}
+            <div class="date">
+                {{ app.pubDate }}
+            </div>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'app_publish' pk=app.pk %}">Publish</a>
+        {% endif %}
+
+        <h1>{{ app.appName }}</h1>
+        <p>{{ app.summary | linebreaksbr }}</p>
+    </div>
+{% endblock %}
